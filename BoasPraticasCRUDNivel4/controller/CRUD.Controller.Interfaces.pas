@@ -19,23 +19,12 @@ uses
   FireDAC.VCLUI.Wait,
   FireDAC.Comp.UI,
   Data.DB,
-  FireDAC.Comp.Client,
-  CRUD.Services.Generic,
-  CRUD.Model.Entity.Pedidos,
-  CRUD.Model.Entity.PedidoItens, CRUD.Controller.DTO.Interfaces;
+  FireDAC.Comp.Client, CRUD.Controller.DTO.Interfaces;
 
 type
-  iControllerServices<T : class> = interface;
-
   iController = interface
-    function Pedidos : iControllerServices<TPedidos>;
-    function PedidoItens : iControllerServices<TPedidoItens>;
     function Cliente : iClienteDTO;
-  end;
-
-  iControllerServices<T : class> = interface
-    function This : iService<T>;
-    function &End : iController;
+    function Endereco : iEnderecoDTO;
   end;
 
 implementation

@@ -23,22 +23,32 @@ FireDAC.Stan.Intf,
   CRUD.Controller.Interfaces,
   CRUD.Controller.Generic,
   CRUD.Model.Entity.Pedidos,
-  CRUD.Model.Entity.PedidoItens;
+  CRUD.Model.Entity.PedidoItens, CRUD.Controller.DTO.Interfaces,
+  CRUD.Controller.DTO.Cliente;
 
 type
   TController = class(TInterfacedObject, iController)
     private
       FPedidos : iControllerServices<TPedidos>;
       FPedidoItens : iControllerServices<TPedidoItens>;
+      FCliente : iClienteDTO;
     public
       constructor Create;
       destructor Destroy; override;
       class function New : iController;
       function Pedidos : iControllerServices<TPedidos>;
       function PedidoItens : iControllerServices<TPedidoItens>;
+      function Cliente : iClienteDTO;
   end;
 
 implementation
+
+function TController.Cliente: iClienteDTO;
+begin
+  if not Assigned(FCliente) then
+    FCliente := TClienteDTO.New;
+  Result := FCliente;
+end;
 
 constructor TController.Create;
 begin

@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 344
+  ClientHeight = 546
   ClientWidth = 447
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -62,7 +62,7 @@ object Form1: TForm1
   end
   object btnListar: TButton
     Left = 8
-    Top = 315
+    Top = 491
     Width = 75
     Height = 25
     Caption = 'Listar'
@@ -92,7 +92,7 @@ object Form1: TForm1
   end
   object btnExcluir: TButton
     Left = 283
-    Top = 315
+    Top = 491
     Width = 75
     Height = 25
     Caption = 'Excluir'
@@ -101,7 +101,7 @@ object Form1: TForm1
   end
   object btnAtualizar: TButton
     Left = 202
-    Top = 315
+    Top = 491
     Width = 75
     Height = 25
     Caption = 'Atualizar'
@@ -110,12 +110,25 @@ object Form1: TForm1
   end
   object btnSalvar: TButton
     Left = 364
-    Top = 315
+    Top = 491
     Width = 75
     Height = 25
     Caption = 'Salvar'
     TabOrder = 8
     OnClick = btnSalvarClick
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 336
+    Width = 431
+    Height = 120
+    DataSource = dscliente
+    TabOrder = 9
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
   end
   object dsPedido: TDataSource
     Left = 400
@@ -124,5 +137,9 @@ object Form1: TForm1
   object dsPedidoItens: TDataSource
     Left = 400
     Top = 232
+  end
+  object dscliente: TDataSource
+    Left = 328
+    Top = 368
   end
 end

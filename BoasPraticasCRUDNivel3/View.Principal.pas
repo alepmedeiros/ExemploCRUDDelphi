@@ -37,6 +37,8 @@ type
     btnExcluir: TButton;
     btnAtualizar: TButton;
     btnSalvar: TButton;
+    DBGrid1: TDBGrid;
+    dscliente: TDataSource;
     procedure FormCreate(Sender: TObject);
     procedure btnListarClick(Sender: TObject);
     procedure btnAtualizarClick(Sender: TObject);
@@ -51,6 +53,11 @@ type
     procedure PreencherDataset;
   public
     { Public declarations }
+  end;
+
+  TCliente = class
+    Nome : String;
+    SobreNome : String;
   end;
 
 var
@@ -168,6 +175,7 @@ begin
   dsPedido.DataSet := FController.Pedidos.This.Listar;
   dsPedidoItens.DataSet := FController.PedidoItens.This
     .ListarPorFiltro('ID_PEDIDO',dsPedido.DataSet.FieldByName('ID').AsInteger);
+  dscliente.DataSet := FController.Cliente.Build.Listar;
 end;
 
 end.

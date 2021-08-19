@@ -10,7 +10,10 @@ uses
   CRUD.Services.Generic in 'services\CRUD.Services.Generic.pas',
   CRUD.Controller.Interfaces in 'controller\CRUD.Controller.Interfaces.pas',
   CRUD.Controller.Generic in 'controller\CRUD.Controller.Generic.pas',
-  CRUD.Controller in 'controller\CRUD.Controller.pas';
+  CRUD.Controller in 'controller\CRUD.Controller.pas',
+  CRUD.Controller.DTO.Cliente in 'controller\dto\CRUD.Controller.DTO.Cliente.pas',
+  CRUD.Controller.DTO.Interfaces in 'controller\dto\CRUD.Controller.DTO.Interfaces.pas',
+  CRUD.Model.Entity.Cliente in 'model\entity\CRUD.Model.Entity.Cliente.pas';
 
 {$R *.res}
 

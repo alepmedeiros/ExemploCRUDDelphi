@@ -8,7 +8,7 @@
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Application</AppType>
-        <MainSource>BoasPraticasCRUD_N3.dpr</MainSource>
+        <MainSource>BoasPraticasCRUD_N4.dpr</MainSource>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -57,7 +57,7 @@
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
-        <SanitizedProjectName>BoasPraticasCRUD_N3</SanitizedProjectName>
+        <SanitizedProjectName>BoasPraticasCRUD_N4</SanitizedProjectName>
         <DCC_UnitSearchPath>modules\.dcp;modules\.dcu;modules;modules\simpleorm\Sample\Entidades;modules\simpleorm\Sample\FMX;modules\simpleorm\Sample\Firedac;modules\simpleorm\Sample\RestDW;modules\simpleorm\Sample\Unidac;modules\simpleorm\Sample\Validation\Base\View;modules\simpleorm\Sample\Validation\Entidade;modules\simpleorm\Sample\Validation\Export;modules\simpleorm\Sample\Validation\View;modules\simpleorm\Sample\horse\Controller;modules\simpleorm\Sample\horse;modules\simpleorm\Sample\horse\Model\Connection;modules\simpleorm\Sample\horse\Model\Entity;modules\simpleorm\Sample\horse\Model;modules\simpleorm;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
@@ -84,6 +84,8 @@
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -99,21 +101,24 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="View.Principal.pas">
-            <Form>Form1</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="model\entity\CRUD.Model.Entity.Pedidos.pas"/>
-        <DCCReference Include="model\entity\CRUD.Model.Entity.PedidoItens.pas"/>
+        <DCCReference Include="model\entity\CRUD.Model.Entity.Cliente.pas"/>
         <DCCReference Include="resources\CRUD.Resources.Interfaces.pas"/>
         <DCCReference Include="resources\CRUD.Resources.Conexao.pas"/>
         <DCCReference Include="services\CRUD.Services.Generic.pas"/>
-        <DCCReference Include="controller\CRUD.Controller.Interfaces.pas"/>
-        <DCCReference Include="controller\CRUD.Controller.Generic.pas"/>
+        <DCCReference Include="view\CRUD.view.Editar.pas">
+            <Form>frmEditar</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="view\CRUD.View.Principal.pas">
+            <Form>frmListarClientes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="dto\CRUD.Controller.DTO.Cliente.pas"/>
         <DCCReference Include="controller\CRUD.Controller.pas"/>
-        <DCCReference Include="controller\dto\CRUD.Controller.DTO.Cliente.pas"/>
-        <DCCReference Include="controller\dto\CRUD.Controller.DTO.Interfaces.pas"/>
-        <DCCReference Include="model\entity\CRUD.Model.Entity.Cliente.pas"/>
+        <DCCReference Include="controller\CRUD.Controller.Interfaces.pas"/>
+        <DCCReference Include="dto\CRUD.Controller.DTO.Interfaces.pas"/>
+        <DCCReference Include="dto\CRUD.Controller.DTO.Endereco.pas"/>
+        <DCCReference Include="model\entity\CRUD.Model.Entity.Endereco.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -132,13 +137,17 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">BoasPraticasCRUD_N3.dpr</Source>
+                    <Source Name="MainSource">BoasPraticasCRUD_N4.dpr</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k270.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp270.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="Win32\Debug\BoasPraticasCRUD_N3.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Win32\Debug\BoasPraticasCRUD_N4.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>BoasPraticasCRUD_N3.exe</RemoteName>
+                        <RemoteName>BoasPraticasCRUD_N4.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
